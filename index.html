@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Portfolio showcase for a Java 21 and Spring Boot Student Management REST API backed by MySQL.">
+    <title>Student Management REST API — Project Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+    <header>
+        <nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#top">✿ Student API <small>project
+                    showcase</small></a><button class="menu" aria-expanded="false" aria-controls="links">Menu</button>
+            <div id="links"><a href="#overview">Overview</a><a href="#architecture">Architecture</a><a
+                    href="#endpoints">Endpoints</a><a href="#setup">Run locally</a></div>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="hero wrap" id="top">
+            <div>
+                <p class="eyebrow">✿ &nbsp; JAVA BACKEND PROJECT</p>
+                <h1>Student Management<br><em>REST API</em></h1>
+                <p class="lead">A Spring Boot REST API for managing student records, backed by Spring Data JPA and
+                    MySQL.</p>
+                <div class="pills"><span>Java 21</span><span>Spring Boot</span><span>MySQL</span><span>Maven</span>
+                </div>
+                <p class="actions"><a class="button"
+                        href="https://github.com/its-silver-lynx/Student-Management-REST-API" target="_blank"
+                        rel="noopener noreferrer">View project repository ↗</a> <a href="#overview">Explore the project
+                        ↓</a></p>
+            </div>
+            <aside class="hero-card"><span class="flower">✿</span>
+                <p class="eyebrow">A CLOSER LOOK</p>
+                <h2>Student records,<br>handled with care.</h2>
+                <p>Layered Java application with REST endpoints, relational persistence, and both soft and permanent
+                    deletion.</p>
+                <div class="record"><b>Student entity</b><small>id · rollNo · age · name · email · subject</small></div>
+            </aside>
+        </section>
+        <section class="section wrap" id="overview">
+            <p class="eyebrow">01 / OVERVIEW</p>
+            <h2>A focused backend project</h2>
+            <div class="cols">
+                <p class="big">A practical REST API for managing student records and connecting a Spring application to
+                    MySQL.</p>
+                <div>
+                    <p>It demonstrates student CRUD operations, database integration, layered architecture, HTTP
+                        response handling with <code>ResponseEntity</code>, age validation during creation, and two
+                        deletion approaches.</p>
+                    <p>The Java project is a <strong>backend API</strong>, not a completed frontend application. This
+                        page documents its design; it does not call a live API.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section tint">
+            <div class="wrap">
+                <p class="eyebrow">02 / CAPABILITIES</p>
+                <h2>What the API demonstrates</h2>
+                <div class="grid">
+                    <article><i>＋</i>
+                        <h3>Create student records</h3>
+                        <p>Create a student; age is validated during creation.</p>
+                    </article>
+                    <article><i>⌕</i>
+                        <h3>Retrieve students</h3>
+                        <p>Retrieve an active student by ID or list active students.</p>
+                    </article>
+                    <article><i>↻</i>
+                        <h3>Update records</h3>
+                        <p>Update student fields through the resource endpoint.</p>
+                    </article>
+                    <article><i>×</i>
+                        <h3>Permanently delete</h3>
+                        <p>Remove a student record from the database.</p>
+                    </article>
+                    <article><i>◌</i>
+                        <h3>Soft-delete records</h3>
+                        <p>Mark a student as deleted while retaining the record.</p>
+                    </article>
+                    <article><i>↔</i>
+                        <h3>HTTP responses</h3>
+                        <p>Return HTTP status codes using <code>ResponseEntity</code>.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section wrap" id="architecture">
+            <p class="eyebrow">03 / ARCHITECTURE</p>
+            <h2>One layer at a time</h2>
+            <p class="sub">Requests move through focused layers before reaching persistent storage.</p>
+            <div class="cols architecture">
+                <div class="flow">
+                    <div><b>StudentController</b><small>REST routes and HTTP responses</small></div><label>↓</label>
+                    <div><b>StudentService</b><small>Application logic</small></div><label>↓</label>
+                    <div><b>StudentRepository</b><small>Student data access</small></div><label>↓</label>
+                    <div><b>Spring Data JPA / Hibernate</b><small>Persistence and ORM</small></div><label>↓</label>
+                    <div><b>MySQL</b><small>Relational database</small></div>
+                </div>
+                <div>
+                    <h3>Clear responsibilities</h3>
+                    <p>The controller exposes the API, the service coordinates operations, and the repository works with
+                        student data through Spring Data JPA and Hibernate. MySQL stores the records.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section tint" id="endpoints">
+            <div class="wrap">
+                <p class="eyebrow">04 / API REFERENCE</p>
+                <h2>Implemented endpoints</h2>
+                <p class="sub">Base URL for local development: <code>http://localhost:8080/api/students</code></p>
+                <div class="table-wrap" tabindex="0" role="region" aria-label="API endpoint reference">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b class="post">POST</b></td>
+                                <td><code>/api/students/create</code></td>
+                                <td>Create a student; age is validated.</td>
+                            </tr>
+                            <tr>
+                                <td><b class="get">GET</b></td>
+                                <td><code>/api/students/get?id={id}</code></td>
+                                <td>Retrieve an active student by ID.</td>
+                            </tr>
+                            <tr>
+                                <td><b class="get">GET</b></td>
+                                <td><code>/api/students</code></td>
+                                <td>Retrieve all active students.</td>
+                            </tr>
+                            <tr>
+                                <td><b class="put">PUT</b></td>
+                                <td><code>/api/students/{id}</code></td>
+                                <td>Update student fields.</td>
+                            </tr>
+                            <tr>
+                                <td><b class="delete">DELETE</b></td>
+                                <td><code>/api/students/{id}</code></td>
+                                <td>Permanently delete a student.</td>
+                            </tr>
+                            <tr>
+                                <td><b class="patch">PATCH</b></td>
+                                <td><code>/api/students/soft-delete/{id}</code></td>
+                                <td>Mark a student as deleted.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="sub">Individual retrieval and list operations exclude soft-deleted students. These are local
+                    API routes; this static showcase does not host or invoke them.</p>
+            </div>
+        </section>
+        <section class="section wrap">
+            <p class="eyebrow">05 / TOOLKIT & CONCEPTS</p>
+            <h2>Tools behind the project</h2>
+            <div class="cols">
+                <div>
+                    <h3>Technology</h3>
+                    <div class="pills"><span>Java 21</span><span>Spring Boot</span><span>Spring Web MVC</span><span>REST
+                            controllers</span><span>Spring Data JPA</span><span>Hibernate
+                            ORM</span><span>MySQL</span><span>Maven</span><span>Postman</span></div>
+                </div>
+                <div>
+                    <h3>Concepts in practice</h3>
+                    <div class="pills"><span>Dependency injection</span><span>Entity mapping</span><span>Repository
+                            pattern</span><span>Layered architecture</span><span>HTTP methods and status
+                            codes</span><span>Soft vs. hard deletion</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="section tint" id="setup">
+            <div class="wrap">
+                <p class="eyebrow">06 / GETTING STARTED</p>
+                <h2>Run it locally</h2>
+                <div class="cols">
+                    <div>
+                        <p>Set up the Java project and MySQL database, then send requests from Postman.</p>
+                        <p class="note">The current configuration uses Hibernate <code>ddl-auto=update</code> for schema
+                            updates during development. Production database configuration is not described here.</p>
+                    </div>
+                    <ol>
+                        <li>Install Java 21, Maven, and MySQL.</li>
+                        <li>Create the database:
+                            <pre><code>CREATE DATABASE student_crud_db;</code></pre>
+                        </li>
+                        <li>Set your local MySQL URL, username, and password in <code>application.properties</code>. Use
+                            your own credentials:
+                            <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/student_crud_db
+spring.datasource.username=&lt;your-username&gt;
+spring.datasource.password=&lt;your-password&gt;</code></pre>
+                        </li>
+                        <li>From the Java project's root directory, run:
+                            <pre><code>mvn spring-boot:run</code></pre>
+                        </li>
+                        <li>Test the endpoints using Postman.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="section wrap">
+            <div class="learn">
+                <div>
+                    <p class="eyebrow">07 / WHAT I LEARNED</p>
+                    <h2>Building blocks for backend work.</h2>
+                </div>
+                <div>
+                    <p>Practical learning demonstrated by this project:</p>
+                    <ul>
+                        <li>Building REST endpoints with Spring</li>
+                        <li>Structuring an application into controller, service, and repository layers</li>
+                        <li>Connecting a Java application to a relational database</li>
+                        <li>Using Spring Data JPA</li>
+                        <li>Handling HTTP responses and implementing soft and hard deletion</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="closing wrap"><span>✿</span>
+            <p class="eyebrow">THANK YOU FOR TAKING A LOOK</p>
+            <h2>Curious about the code?</h2>
+            <p>Explore the source to see how the API is put together.</p><a class="button"
+                href="https://github.com/its-silver-lynx/Student-Management-REST-API" target="_blank"
+                rel="noopener noreferrer">Explore the Source Code ↗</a>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot"><a class="brand" href="#top">✿ Student API</a>
+            <p>A personal Java backend project showcase.</p><a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+    <script>const b = document.querySelector('.menu'), n = document.querySelector('#links'); b.addEventListener('click', () => { const o = b.getAttribute('aria-expanded') === 'true'; b.setAttribute('aria-expanded', String(!o)); n.classList.toggle('open', !o) }); n.addEventListener('click', e => { if (e.target.closest('a')) { b.setAttribute('aria-expanded', 'false'); n.classList.remove('open') } });</script>
+</body>
+
+</html>
