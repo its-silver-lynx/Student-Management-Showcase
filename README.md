@@ -27,7 +27,8 @@ No build tools or package installation are required. Google Fonts needs an inter
 
 Expected website address after successful publication:
 
-<https://its-silver-lynx.github.io/student-management-api-showcase/>
+<https://its-silver-lynx.github.io/Student-Management-Showcase/>
+
 
 This is the expected address; it will not be live until the repository is configured and published.
 
