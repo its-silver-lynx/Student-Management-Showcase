@@ -10,27 +10,13 @@ The website presents the project's features, architecture, API endpoints, local 
 - Vanilla JavaScript
 - Google Fonts (DM Sans and Playfair Display, with system font fallbacks)
 
-## Preview locally
 
-1. Download or clone this showcase repository.
-2. Open `index.html` in your browser.
+## View the Website
 
-No build tools or package installation are required. Google Fonts needs an internet connection; system fonts are used if they are unavailable.
+This website is hosted for free using GitHub Pages.
 
-## Publish with GitHub Pages
+**Live Website:** [Open the Banking System Presentation](https://its-silver-lynx.github.io/Student-Management-Showcase/)
 
-1. Create a separate public repository named `student-management-api-showcase` under your GitHub account, `its-silver-lynx`.
-2. Upload `index.html`, `style.css`, and this `README.md` to the repository root.
-3. Open **Settings → Pages**.
-4. Under the build and deployment settings, select **Deploy from a branch**, choose `main` and the `/ (root)` folder, then save.
-5. Wait for GitHub Pages to finish publishing.
-
-Expected website address after successful publication:
-
-<https://its-silver-lynx.github.io/Student-Management-Showcase/>
-
-
-This is the expected address; it will not be live until the repository is configured and published.
 
 ## Backend project
 
