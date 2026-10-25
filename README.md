@@ -18,6 +18,13 @@ This website is hosted for free using GitHub Pages.
 **Live Website:** [Open the Banking System Presentation](https://its-silver-lynx.github.io/Student-Management-Showcase/)
 
 
-## Backend project
+## Source Code
 
-**Source code:** <https://github.com/its-silver-lynx/Student-Management-REST-API>
+Interested in the project? Explore the source code, clone the repository, and try it yourself!
+
+[**Student Management REST API — GitHub Repository**](https://github.com/its-silver-lynx/Student-Management-REST-API)
+
+## Author
+
+**Priyanshu** · [GitHub Profile](https://github.com/its-silver-lynx)
+
